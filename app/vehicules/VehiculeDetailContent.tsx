@@ -1,16 +1,17 @@
 'use client';
 
-import { useParams } from 'next/navigation';
+import { useSearchParams } from 'next/navigation';
 import Link from 'next/link';
 import { ArrowLeft } from 'lucide-react';
 import { Header } from '@/components/layout/Header';
 import { useStore, getVehiculeHistorique, getVehiculeOwner } from '@/lib/store';
 
-export default function VehiculeDetailPage() {
-  const params = useParams();
+export default function VehiculeDetailContent() {
+  const searchParams = useSearchParams();
   const { state } = useStore();
 
-  const vehicule = state.vehicules.find((v) => v.id === params.id);
+  const id = searchParams.get('id');
+  const vehicule = id ? state.vehicules.find((v) => v.id === id) : undefined;
 
   if (!vehicule) {
     return (
@@ -55,7 +56,7 @@ export default function VehiculeDetailPage() {
             </h2>
             {owner ? (
               <Link
-                href={`/clients/${owner.id}`}
+                href={`/clients/detail?id=${owner.id}`}
                 className="text-lg font-medium hover:text-brand-white transition-colors"
               >
                 {owner.nom}

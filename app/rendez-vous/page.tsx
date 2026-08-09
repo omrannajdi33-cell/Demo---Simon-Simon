@@ -110,7 +110,7 @@ function DetailPanel({ rdv, onClose }: { rdv: RendezVous; onClose: () => void })
 
       {rdv.clientId && (
         <Link
-          href={`/clients/${rdv.clientId}`}
+          href={`/clients/detail?id=${rdv.clientId}`}
           className="block text-center text-sm text-brand-light hover:text-brand-white mt-4 transition-colors"
         >
           Voir le profil client →

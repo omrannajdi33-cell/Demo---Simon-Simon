@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { useParams, useRouter } from 'next/navigation';
+import { useRouter, useSearchParams } from 'next/navigation';
 import Link from 'next/link';
 import { ArrowLeft, Phone, Mail, MapPin } from 'lucide-react';
 import { Header } from '@/components/layout/Header';
@@ -10,13 +10,14 @@ import { DemoNote } from '@/components/ui/DemoNote';
 import { useStore } from '@/lib/store';
 import { DemandeStatus } from '@/lib/types';
 
-export default function DemandeDetailPage() {
-  const params = useParams();
+export default function DemandeDetailContent() {
+  const searchParams = useSearchParams();
   const router = useRouter();
   const { state, updateDemandeStatus } = useStore();
   const [actionMsg, setActionMsg] = useState('');
 
-  const demande = state.demandes.find((d) => d.id === params.id);
+  const id = searchParams.get('id');
+  const demande = id ? state.demandes.find((d) => d.id === id) : undefined;
 
   if (!demande) {
     return (

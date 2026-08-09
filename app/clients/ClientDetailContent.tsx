@@ -1,6 +1,6 @@
 'use client';
 
-import { useParams } from 'next/navigation';
+import { useSearchParams } from 'next/navigation';
 import Link from 'next/link';
 import { ArrowLeft, Phone, Mail, Car, ClipboardList, Calendar } from 'lucide-react';
 import { Header } from '@/components/layout/Header';
@@ -12,11 +12,12 @@ import {
   getVehiculeHistorique,
 } from '@/lib/store';
 
-export default function ClientDetailPage() {
-  const params = useParams();
+export default function ClientDetailContent() {
+  const searchParams = useSearchParams();
   const { state } = useStore();
 
-  const client = state.clients.find((c) => c.id === params.id);
+  const id = searchParams.get('id');
+  const client = id ? state.clients.find((c) => c.id === id) : undefined;
 
   if (!client) {
     return (
@@ -92,7 +93,7 @@ export default function ClientDetailPage() {
             {vehicules.map((v) => (
               <Link
                 key={v.id}
-                href={`/vehicules/${v.id}`}
+                href={`/vehicules/detail?id=${v.id}`}
                 className="flex items-center justify-between p-4 bg-brand-gray rounded-lg hover:bg-brand-muted/50 transition-colors"
               >
                 <div>

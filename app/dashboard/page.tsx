@@ -67,7 +67,7 @@ export default function DashboardPage() {
                     className={`table-row ${demande.isNew ? 'bg-status-new/5' : ''}`}
                   >
                     <td className="py-4">
-                      <Link href={`/demandes/${demande.id}`} className="hover:text-brand-white">
+                      <Link href={`/demandes/detail?id=${demande.id}`} className="hover:text-brand-white">
                         <span className="font-medium">{demande.clientNom}</span>
                         {demande.isNew && (
                           <span className="ml-2 inline-flex w-2 h-2 bg-status-new rounded-full animate-pulse-soft" />

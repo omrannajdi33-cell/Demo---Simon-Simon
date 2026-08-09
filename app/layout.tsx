@@ -1,10 +1,15 @@
 import type { Metadata } from 'next';
 import { StoreProvider } from '@/lib/store';
+import { basePath } from '@/lib/basePath';
 import './globals.css';
 
 export const metadata: Metadata = {
   title: 'Simon & Simon — Prototype Démo',
   description: 'Plateforme de gestion pour Simon & Simon Esthétique Automobile — Prototype concept',
+  icons: {
+    icon: `${basePath}/icon`,
+    shortcut: `${basePath}/icon`,
+  },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

@@ -29,7 +29,7 @@ export default function ClientsPage() {
                   return (
                     <tr key={client.id} className="table-row">
                       <td className="px-6 py-4">
-                        <Link href={`/clients/${client.id}`} className="font-medium hover:text-brand-white">
+                        <Link href={`/clients/detail?id=${client.id}`} className="font-medium hover:text-brand-white">
                           {client.nom}
                         </Link>
                       </td>

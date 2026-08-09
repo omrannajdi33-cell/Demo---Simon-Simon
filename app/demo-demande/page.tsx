@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useRef } from 'react';
+import Link from 'next/link';
 import { Check, ChevronRight, Camera, ArrowLeft, X, Sparkles, Shield, Clock, ImageIcon } from 'lucide-react';
 import { useStore } from '@/lib/store';
 import { ServiceType, DemandeFormData } from '@/lib/types';
@@ -154,7 +155,7 @@ export default function DemoDemandePage() {
             </p>
             <div className="mt-8 p-4 bg-amber-500/10 border border-amber-500/30 rounded-xl text-sm text-amber-400">
               <strong>Astuce démo :</strong> Retournez au{' '}
-              <a href="/dashboard" className="underline hover:text-amber-300">Dashboard</a>{' '}
+              <Link href="/dashboard" className="underline hover:text-amber-300">Dashboard</Link>{' '}
               pour voir la nouvelle demande apparaître en temps réel.
             </div>
           </div>

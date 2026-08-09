@@ -17,7 +17,7 @@ export default function VehiculesPage() {
             return (
               <Link
                 key={vehicule.id}
-                href={`/vehicules/${vehicule.id}`}
+                href={`/vehicules/detail?id=${vehicule.id}`}
                 className="card hover:border-brand-silver/30 group"
               >
                 <div className="flex items-start justify-between">

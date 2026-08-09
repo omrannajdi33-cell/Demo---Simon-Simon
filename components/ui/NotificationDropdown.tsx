@@ -74,7 +74,7 @@ export function NotificationDropdown() {
               newDemandes.map((demande) => (
                 <Link
                   key={demande.id}
-                  href={`/demandes/${demande.id}`}
+                  href={`/demandes/detail?id=${demande.id}`}
                   onClick={() => {
                     setOpen(false);
                     clearNewDemandeFlag();

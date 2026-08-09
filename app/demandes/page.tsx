@@ -56,7 +56,7 @@ export default function DemandesPage() {
           {filteredDemandes.map((demande) => (
             <Link
               key={demande.id}
-              href={`/demandes/${demande.id}`}
+              href={`/demandes/detail?id=${demande.id}`}
               className={`card block hover:border-brand-silver/30 ${
                 demande.isNew ? 'border-status-new/50 bg-status-new/5' : ''
               }`}
