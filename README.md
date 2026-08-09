@@ -6,13 +6,24 @@ Plateforme de gestion interactive pour **Simon & Simon Esthétique Automobile**.
 
 ## Démo en ligne
 
-Déployez sur Vercel pour obtenir une URL publique :
+**Live demo:** [https://omrannajdi33-cell.github.io/Demo---Simon-Simon/dashboard](https://omrannajdi33-cell.github.io/Demo---Simon-Simon/dashboard)
+
+> GitHub Pages sert l'application à `/Demo---Simon-Simon/`. La page d'accueil redirige automatiquement vers le tableau de bord.
+
+## Développement local
 
 ```bash
 npm install
-npm run dev      # Développement local
-npm run build    # Build production
+npm run dev      # Développement local (http://localhost:3000/Demo---Simon-Simon/dashboard)
+npm run build    # Export statique dans out/
 ```
+
+## Déploiement GitHub Pages
+
+Le déploiement est automatisé via GitHub Actions (`.github/workflows/deploy.yml`) à chaque push sur `main`.
+
+1. Dans les paramètres du dépôt GitHub → **Pages** → Source : **GitHub Actions**
+2. Pousser sur `main` déclenche le build et le déploiement
 
 ## Scénario de démonstration
 
@@ -39,7 +50,7 @@ npm run build    # Build production
 
 ## Stack
 
-- Next.js 14 (App Router)
+- Next.js 14 (App Router, static export)
 - TypeScript
 - Tailwind CSS
 - localStorage pour persistance démo
