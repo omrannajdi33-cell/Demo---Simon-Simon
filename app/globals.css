@@ -1,0 +1,73 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+@layer base {
+  html {
+    @apply antialiased;
+  }
+  body {
+    @apply bg-brand-black text-brand-white font-sans;
+  }
+}
+
+@layer components {
+  .card {
+    @apply bg-brand-dark border border-brand-muted/50 rounded-xl p-6 transition-all duration-300;
+  }
+  .card:hover {
+    @apply border-brand-muted;
+  }
+  .btn-primary {
+    @apply bg-brand-white text-brand-black px-6 py-3 rounded-lg font-medium
+           hover:bg-brand-accent transition-all duration-200 active:scale-[0.98];
+  }
+  .btn-secondary {
+    @apply bg-brand-muted text-brand-white px-6 py-3 rounded-lg font-medium
+           hover:bg-brand-muted/80 transition-all duration-200 border border-brand-muted;
+  }
+  .btn-ghost {
+    @apply text-brand-silver px-4 py-2 rounded-lg font-medium
+           hover:text-brand-white hover:bg-brand-muted/50 transition-all duration-200;
+  }
+  .btn-danger {
+    @apply bg-status-refused/20 text-status-refused px-6 py-3 rounded-lg font-medium
+           hover:bg-status-refused/30 transition-all duration-200 border border-status-refused/30;
+  }
+  .btn-success {
+    @apply bg-status-accepted/20 text-status-accepted px-6 py-3 rounded-lg font-medium
+           hover:bg-status-accepted/30 transition-all duration-200 border border-status-accepted/30;
+  }
+  .input-field {
+    @apply w-full bg-brand-gray border border-brand-muted rounded-lg px-4 py-3
+           text-brand-white placeholder-brand-light focus:outline-none focus:border-brand-silver
+           transition-colors duration-200;
+  }
+  .nav-link {
+    @apply text-brand-light hover:text-brand-white transition-colors duration-200 font-medium;
+  }
+  .nav-link-active {
+    @apply text-brand-white border-b-2 border-brand-white pb-1;
+  }
+  .stat-card {
+    @apply card flex flex-col gap-2;
+  }
+  .table-row {
+    @apply border-b border-brand-muted/30 hover:bg-brand-muted/20 transition-colors cursor-pointer;
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    @apply bg-gradient-to-r from-brand-white to-brand-silver bg-clip-text text-transparent;
+  }
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+}
